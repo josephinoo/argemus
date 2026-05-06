@@ -1,8 +1,8 @@
 ---
 ---
 <section class="impact" id="impacto">
-  <div class="container text-center">
-    <h2 class="section-title">Resultados que transforman la práctica legal</h2>
+  <div class="container">
+    <h2 class="section-title">Resultados medibles para operaciones legales modernas</h2>
     <div class="stats-grid">
       <div class="stat-item">
         <span class="stat-number">90%</span>
@@ -22,46 +22,52 @@
 
 <style>
   .impact {
-    background-color: var(--color-white);
-    color: var(--color-black);
+    padding-top: var(--spacing-lg);
   }
 
   .section-title {
-    font-size: 3rem;
-    margin-bottom: 5rem;
-    max-width: 800px;
-    margin-left: auto;
-    margin-right: auto;
+    font-size: clamp(1.8rem, 3vw, 2.4rem);
+    margin-bottom: 1.8rem;
+    max-width: 620px;
+    letter-spacing: -0.01em;
   }
 
   .stats-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: var(--spacing-xl);
+    gap: 1rem;
+  }
+
+  .stat-item {
+    padding: 1.25rem;
+    border-radius: 0;
+    border: 0;
+    background: transparent;
+    transition: transform 0.2s ease, border-color 0.2s ease;
+    animation: fadeIn 900ms ease both;
+  }
+
+  .stat-item:hover {
+    transform: translateY(-3px);
   }
 
   .stat-number {
     display: block;
-    font-family: var(--font-serif);
-    font-size: 5rem;
+    font-size: clamp(2.2rem, 5vw, 3.2rem);
     font-weight: 700;
-    margin-bottom: 1rem;
-    color: var(--color-black);
+    margin-bottom: 0.4rem;
+    color: var(--color-text);
   }
 
   .stat-label {
-    font-size: 1.1rem;
-    color: var(--color-gray-800);
+    font-size: 0.95rem;
+    color: var(--color-muted);
     font-weight: 500;
   }
 
   @media (max-width: 768px) {
     .stats-grid {
       grid-template-columns: 1fr;
-      gap: var(--spacing-lg);
-    }
-    .stat-number {
-      font-size: 3.5rem;
     }
   }
 </style>

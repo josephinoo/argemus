@@ -2,7 +2,7 @@
 ---
 <section class="social-proof">
   <div class="container">
-    <p class="section-label">Utilizado por las firmas más prestigiosas del mundo</p>
+    <p class="section-label">Con la confianza de equipos legales de alto desempeño</p>
     <div class="logos-grid">
       <div class="logo-item">GARRIGUES</div>
       <div class="logo-item">CUATRECASAS</div>
@@ -15,42 +15,44 @@
 
 <style>
   .social-proof {
-    background-color: var(--color-black);
-    padding: var(--spacing-lg) 0;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    background-color: transparent;
+    padding: 1.5rem 0 var(--spacing-lg);
   }
 
   .section-label {
     text-align: center;
     font-size: 0.8rem;
     text-transform: uppercase;
-    letter-spacing: 2px;
-    color: var(--color-gray-200);
-    margin-bottom: 3rem;
-    opacity: 0.7;
+    letter-spacing: 0.12em;
+    color: var(--color-muted);
+    margin-bottom: 2.25rem;
+    opacity: 0.88;
   }
 
   .logos-grid {
+    padding: 0;
+    border: 0;
+    border-radius: 0;
+    background: transparent;
     display: flex;
     justify-content: space-between;
     align-items: center;
     flex-wrap: wrap;
-    gap: 3rem;
-    opacity: 0.5;
-    filter: grayscale(1);
-    transition: all 0.5s ease;
-  }
-
-  .logos-grid:hover {
-    opacity: 0.8;
-    filter: grayscale(0.5);
+    gap: 1rem 2rem;
+    animation: fadeIn 900ms ease both;
   }
 
   .logo-item {
-    font-family: var(--font-serif);
-    font-weight: 600;
-    font-size: 1.2rem;
-    letter-spacing: 1px;
+    font-weight: 500;
+    font-size: 0.95rem;
+    letter-spacing: 0.09em;
+    color: rgba(232, 237, 255, 0.78);
+    transition: transform 0.2s ease, color 0.2s ease;
+  }
+
+  .logo-item:hover {
+    transform: translateY(-2px);
+    color: var(--color-text);
   }
 
   @media (max-width: 768px) {
