@@ -110,8 +110,48 @@
   .hero-subtitle { animation-delay: 160ms; }
 
   @media (max-width: 768px) {
+    .hero {
+      min-height: auto;
+      padding-top: 6.4rem;
+      padding-bottom: 1rem;
+    }
+
+    .hero::before {
+      inset: 8% 2% auto;
+      height: 260px;
+      filter: blur(22px);
+    }
+
+    .hero-title {
+      font-size: clamp(1.95rem, 10vw, 2.8rem);
+      line-height: 1.04;
+      margin-bottom: 0.8rem;
+    }
+
+    .hero-subtitle {
+      font-size: 0.95rem;
+      margin-bottom: 1.2rem;
+      max-width: 100%;
+    }
+
     .hero-cta {
       flex-direction: column;
+      align-items: stretch;
+      width: 100%;
+      gap: 0.55rem;
+    }
+
+    .hero-cta .cta-button {
+      width: 100%;
+      text-align: center;
+      justify-content: center;
+    }
+  }
+
+  @media (max-width: 420px) {
+    .hero-kicker {
+      font-size: 0.68rem;
+      letter-spacing: 0.06em;
     }
   }
 

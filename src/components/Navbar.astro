@@ -86,8 +86,40 @@
   }
 
   @media (max-width: 768px) {
+    #main-nav {
+      height: 68px;
+    }
+
+    #main-nav.scrolled {
+      height: 62px;
+    }
+
     .nav-links {
       display: none;
+    }
+
+    .nav-actions {
+      gap: 0.65rem;
+    }
+
+    .login-link {
+      display: none;
+    }
+
+    .nav-actions .cta-button {
+      padding: 0.5rem 0.85rem;
+      font-size: 0.78rem;
+    }
+
+    .logo a {
+      font-size: 0.88rem;
+      letter-spacing: 0.17em;
+    }
+  }
+
+  @media (max-width: 420px) {
+    .logo a {
+      letter-spacing: 0.14em;
     }
   }
 </style>
