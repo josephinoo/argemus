@@ -1,0 +1,67 @@
+---
+---
+<section class="impact" id="impacto">
+  <div class="container text-center">
+    <h2 class="section-title">Resultados que transforman la práctica legal</h2>
+    <div class="stats-grid">
+      <div class="stat-item">
+        <span class="stat-number">90%</span>
+        <p class="stat-label">Reducción en tiempo de investigación</p>
+      </div>
+      <div class="stat-item">
+        <span class="stat-number">24/7</span>
+        <p class="stat-label">Disponibilidad de análisis jurídico</p>
+      </div>
+      <div class="stat-item">
+        <span class="stat-number">500+</span>
+        <p class="stat-label">Firmas confían en nosotros</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .impact {
+    background-color: var(--color-white);
+    color: var(--color-black);
+  }
+
+  .section-title {
+    font-size: 3rem;
+    margin-bottom: 5rem;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .stats-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--spacing-xl);
+  }
+
+  .stat-number {
+    display: block;
+    font-family: var(--font-serif);
+    font-size: 5rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    color: var(--color-black);
+  }
+
+  .stat-label {
+    font-size: 1.1rem;
+    color: var(--color-gray-800);
+    font-weight: 500;
+  }
+
+  @media (max-width: 768px) {
+    .stats-grid {
+      grid-template-columns: 1fr;
+      gap: var(--spacing-lg);
+    }
+    .stat-number {
+      font-size: 3.5rem;
+    }
+  }
+</style>

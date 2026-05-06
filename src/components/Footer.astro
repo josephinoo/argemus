@@ -1,0 +1,113 @@
+---
+---
+<footer id="empresa">
+  <div class="container footer-grid">
+    <div class="footer-brand">
+      <h2 class="footer-logo">ARGEMUS</h2>
+      <p class="footer-tagline">Construyendo la infraestructura de IA para la justicia global.</p>
+    </div>
+    <div class="footer-links">
+      <div class="link-group">
+        <h3>Plataforma</h3>
+        <ul>
+          <li><a href="#">Soluciones</a></li>
+          <li><a href="#">Seguridad</a></li>
+          <li><a href="#">API</a></li>
+        </ul>
+      </div>
+      <div class="link-group">
+        <h3>Compañía</h3>
+        <ul>
+          <li><a href="#">Sobre Nosotros</a></li>
+          <li><a href="#">Carreras</a></li>
+          <li><a href="#">Contacto</a></li>
+        </ul>
+      </div>
+      <div class="link-group">
+        <h3>Legal</h3>
+        <ul>
+          <li><a href="#">Privacidad</a></li>
+          <li><a href="#">Términos</a></li>
+          <li><a href="#">Ética en IA</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div class="container">
+      <p>&copy; {new Date().getFullYear()} Argemus. Todos los derechos reservados.</p>
+    </div>
+  </div>
+</footer>
+
+<style>
+  footer {
+    background-color: var(--color-black);
+    padding-top: var(--spacing-xl);
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+  }
+
+  .footer-grid {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: var(--spacing-xl);
+    margin-bottom: var(--spacing-xl);
+  }
+
+  .footer-logo {
+    font-family: var(--font-serif);
+    font-size: 2rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    margin-bottom: 1.5rem;
+  }
+
+  .footer-tagline {
+    color: var(--color-gray-200);
+    max-width: 300px;
+  }
+
+  .footer-links {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--spacing-md);
+  }
+
+  .link-group h3 {
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 1.5rem;
+    color: var(--color-white);
+  }
+
+  .link-group ul {
+    list-style: none;
+  }
+
+  .link-group li {
+    margin-bottom: 0.75rem;
+  }
+
+  .link-group a {
+    font-size: 0.9rem;
+    color: var(--color-gray-200);
+  }
+
+  .footer-bottom {
+    padding: 2rem 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    text-align: center;
+    font-size: 0.8rem;
+    color: var(--color-gray-200);
+  }
+
+  @media (max-width: 768px) {
+    .footer-grid {
+      grid-template-columns: 1fr;
+    }
+    .footer-links {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+</style>

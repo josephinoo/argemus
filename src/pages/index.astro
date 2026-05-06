@@ -1,0 +1,38 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Navbar from '../components/Navbar.astro';
+import Hero from '../components/Hero.astro';
+import SocialProof from '../components/SocialProof.astro';
+import FeatureSection from '../components/FeatureSection.astro';
+import ImpactStats from '../components/ImpactStats.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<Layout title="Argemus | Inteligencia Artificial para el Derecho">
+	<Navbar />
+	<main>
+		<Hero />
+		<SocialProof />
+		<FeatureSection 
+			tag="Análisis Avanzado"
+			title="Comprenda lo complejo en segundos"
+			description="Argemus analiza miles de documentos jurídicos, jurisprudencia y contratos para encontrar los detalles que otros pasan por alto."
+			image="/ai-analysis.png"
+		/>
+		<ImpactStats />
+		<FeatureSection 
+			tag="Eficiencia Operativa"
+			title="Automatización sin compromisos"
+			description="Desde la generación de borradores hasta la auditoría de cumplimiento, Argemus se integra en su flujo de trabajo para potenciar su productividad."
+			image="/hero-bg.png"
+			reverse={true}
+		/>
+	</main>
+	<Footer />
+</Layout>
+
+<style>
+	main {
+		width: 100%;
+	}
+</style>

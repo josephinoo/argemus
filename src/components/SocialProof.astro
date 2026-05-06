@@ -1,0 +1,62 @@
+---
+---
+<section class="social-proof">
+  <div class="container">
+    <p class="section-label">Utilizado por las firmas más prestigiosas del mundo</p>
+    <div class="logos-grid">
+      <div class="logo-item">GARRIGUES</div>
+      <div class="logo-item">CUATRECASAS</div>
+      <div class="logo-item">URÍA MENÉNDEZ</div>
+      <div class="logo-item">PÉREZ-LLORCA</div>
+      <div class="logo-item">CLIFFORD CHANCE</div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .social-proof {
+    background-color: var(--color-black);
+    padding: var(--spacing-lg) 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  }
+
+  .section-label {
+    text-align: center;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: var(--color-gray-200);
+    margin-bottom: 3rem;
+    opacity: 0.7;
+  }
+
+  .logos-grid {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 3rem;
+    opacity: 0.5;
+    filter: grayscale(1);
+    transition: all 0.5s ease;
+  }
+
+  .logos-grid:hover {
+    opacity: 0.8;
+    filter: grayscale(0.5);
+  }
+
+  .logo-item {
+    font-family: var(--font-serif);
+    font-weight: 600;
+    font-size: 1.2rem;
+    letter-spacing: 1px;
+  }
+
+  @media (max-width: 768px) {
+    .logos-grid {
+      justify-content: center;
+      gap: 2rem;
+    }
+  }
+</style>
