@@ -1,138 +1,22 @@
 ---
 ---
-<nav id="main-nav">
-  <div class="container nav-content">
-    <div class="logo">
-      <a href="/">ARGEMUS</a>
-    </div>
-    <ul class="nav-links">
-      <li><a href="#soluciones">Soluciones</a></li>
-      <li><a href="#impacto">Impacto</a></li>
-      <li><a href="#empresa">Empresa</a></li>
-    </ul>
-    <div class="nav-actions">
-      <a href="/login" class="login-link">Iniciar Sesión</a>
-      <button class="cta-button">Solicitar demo</button>
-    </div>
+<!-- Skip to content -->
+<a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-50 focus:bg-primary focus:text-on-primary focus:px-4 focus:py-2 focus:rounded focus:font-label-md">
+  Saltar al contenido
+</a>
+<!-- TopNavBar -->
+<header class="fixed top-0 w-full z-50 flex justify-between items-center px-margin-mobile md:px-margin-desktop py-4 max-w-container-max mx-auto bg-surface/80 backdrop-blur-xl border-b border-border-base">
+  <div class="flex items-center gap-base md:gap-gutter">
+    <a class="font-headline-sm text-headline-sm font-semibold tracking-tight text-primary" href="#">Argemus</a>
+    <nav aria-label="Navegación principal" class="hidden md:flex gap-gutter items-center ml-gutter">
+      <a class="font-label-md text-label-md text-secondary hover:text-primary transition-colors duration-200 cursor-pointer" href="#">Platform</a>
+      <a class="font-label-md text-label-md text-secondary hover:text-primary transition-colors duration-200 cursor-pointer" href="#">Solutions</a>
+      <a class="font-label-md text-label-md text-secondary hover:text-primary transition-colors duration-200 cursor-pointer" href="#">Resources</a>
+      <a class="font-label-md text-label-md text-secondary hover:text-primary transition-colors duration-200 cursor-pointer" href="#">Pricing</a>
+    </nav>
   </div>
-</nav>
-
-<style>
-  #main-nav {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: var(--header-height);
-    z-index: 1000;
-    transition: all 0.3s ease;
-    display: flex;
-    align-items: center;
-  }
-
-  #main-nav.scrolled {
-    background-color: rgba(7, 9, 20, 0.72);
-    backdrop-filter: blur(12px);
-    border-bottom: 1px solid var(--color-border);
-    height: 74px;
-  }
-
-  .nav-content {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 100%;
-  }
-
-  .logo a {
-    font-size: 0.96rem;
-    font-weight: 600;
-    letter-spacing: 0.2em;
-    text-transform: uppercase;
-    color: var(--color-text);
-  }
-
-  .nav-links {
-    display: flex;
-    gap: 1.6rem;
-    list-style: none;
-  }
-
-  .nav-links a {
-    font-size: 0.84rem;
-    letter-spacing: 0.02em;
-    font-weight: 500;
-    color: var(--color-muted);
-  }
-
-  .nav-links a:hover {
-    color: var(--color-text);
-  }
-
-  .nav-actions {
-    display: flex;
-    align-items: center;
-    gap: 1.1rem;
-  }
-
-  .login-link {
-    font-size: 0.84rem;
-    font-weight: 500;
-    color: var(--color-muted);
-  }
-
-  .login-link:hover {
-    color: var(--color-text);
-  }
-
-  @media (max-width: 768px) {
-    #main-nav {
-      height: 68px;
-    }
-
-    #main-nav.scrolled {
-      height: 62px;
-    }
-
-    .nav-links {
-      display: none;
-    }
-
-    .nav-actions {
-      gap: 0.65rem;
-    }
-
-    .login-link {
-      display: none;
-    }
-
-    .nav-actions .cta-button {
-      padding: 0.5rem 0.85rem;
-      font-size: 0.78rem;
-    }
-
-    .logo a {
-      font-size: 0.88rem;
-      letter-spacing: 0.17em;
-    }
-  }
-
-  @media (max-width: 420px) {
-    .logo a {
-      letter-spacing: 0.14em;
-    }
-  }
-</style>
-
-<script>
-  const nav = document.getElementById('main-nav');
-  if (nav) {
-    window.addEventListener('scroll', () => {
-      if (window.scrollY > 50) {
-        nav.classList.add('scrolled');
-      } else {
-        nav.classList.remove('scrolled');
-      }
-    });
-  }
-</script>
+  <div class="flex items-center gap-base">
+    <a class="hidden md:block font-label-md text-label-md text-secondary hover:text-primary transition-colors duration-200 cursor-pointer" href="#">Log In</a>
+    <a class="bg-primary text-on-primary font-label-md text-label-md px-4 py-2 rounded-DEFAULT hover:opacity-90 transition-opacity cursor-pointer" href="#">Get Started</a>
+  </div>
+</header>

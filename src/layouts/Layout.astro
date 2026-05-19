@@ -4,27 +4,100 @@ import '../styles/global.css';
 interface Props {
 	title: string;
 	description?: string;
+	image?: string;
+	url?: string;
+	type?: string;
+	locale?: string;
+	noindex?: boolean;
 }
 
-const { title, description = "Argemus - Plataforma de IA para profesionales del derecho" } = Astro.props;
+const {
+	title,
+	description = "Argemus es la plataforma de IA diseñada para firmas de abogados y departamentos legales de élite. Automatiza flujos de trabajo complejos, extrae información crítica al instante y reduce el riesgo con precisión empresarial.",
+	image = "/og-image.png",
+	url = Astro.url.href,
+	type = "website",
+	locale = "es_ES",
+	noindex = false,
+} = Astro.props;
+
+const siteName = "Argemus AI";
+const fullTitle = title.includes("Argemus") ? title : `${title} | ${siteName}`;
+
+const structuredData = {
+	"@context": "https://schema.org",
+	"@type": "SoftwareApplication",
+	"name": "Argemus AI",
+	"applicationCategory": "LegalTech",
+	"operatingSystem": "Web",
+	"description": description,
+	"url": Astro.site ?? "https://argemus.ai",
+	"offers": {
+		"@type": "Offer",
+		"availability": "https://schema.org/InStock",
+		"priceCurrency": "USD",
+	},
+	"provider": {
+		"@type": "Organization",
+		"name": "Argemus AI Corporation",
+		"url": Astro.site ?? "https://argemus.ai",
+		"sameAs": [],
+	}
+};
 ---
 
 <!doctype html>
-<html lang="es">
+<html lang="es" class="light">
 	<head>
-		<meta charset="UTF-8" />
-		<meta name="description" content={description} />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<meta name="generator" content={Astro.generator} />
-		<title>{title}</title>
-		
-		<!-- Fonts -->
-		<link rel="preconnect" href="https://fonts.googleapis.com">
-		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-		<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+		<!-- Primary Meta -->
+		<title>{fullTitle}</title>
+		<meta name="description" content={description} />
+		<meta name="author" content="Argemus AI Corporation" />
+		<meta name="keywords" content="IA legal, inteligencia artificial abogados, análisis contratos IA, due diligence IA, legaltech, plataforma jurídica IA, gestión riesgos legal, investigación jurídica automatizada" />
+		{noindex ? <meta name="robots" content="noindex, nofollow" /> : <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />}
+
+		<!-- Canonical -->
+		<link rel="canonical" href={url} />
+
+		<!-- Favicon -->
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+
+		<!-- Open Graph -->
+		<meta property="og:type" content={type} />
+		<meta property="og:title" content={fullTitle} />
+		<meta property="og:description" content={description} />
+		<meta property="og:image" content={image} />
+		<meta property="og:image:width" content="1200" />
+		<meta property="og:image:height" content="630" />
+		<meta property="og:image:alt" content={`${siteName} - Práctica Jurídica Perfeccionada`} />
+		<meta property="og:url" content={url} />
+		<meta property="og:site_name" content={siteName} />
+		<meta property="og:locale" content={locale} />
+
+		<!-- Twitter / X Card -->
+		<meta name="twitter:card" content="summary_large_image" />
+		<meta name="twitter:title" content={fullTitle} />
+		<meta name="twitter:description" content={description} />
+		<meta name="twitter:image" content={image} />
+		<meta name="twitter:image:alt" content={`${siteName} - Práctica Jurídica Perfeccionada`} />
+
+		<!-- Theme color -->
+		<meta name="theme-color" content="#000000" />
+		<meta name="msapplication-TileColor" content="#000000" />
+
+		<!-- Schema.org JSON-LD -->
+		<script type="application/ld+json" set:html={JSON.stringify(structuredData)} />
+
+		<!-- Preconnect for performance -->
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 	</head>
-	<body>
+	<body class="bg-background text-on-background font-body-md antialiased overflow-x-hidden selection:bg-primary-container selection:text-on-primary-container">
 		<slot />
 	</body>
 </html>

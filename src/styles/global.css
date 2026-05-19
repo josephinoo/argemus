@@ -1,120 +1,214 @@
-:root {
-  --color-bg: #08090f;
-  --color-surface: #11131a;
-  --color-card: #11131a;
-  --color-text: #f7f8fb;
-  --color-muted: #a5adbf;
-  --color-border: rgba(255, 255, 255, 0.12);
-  --color-accent: #8f9dff;
-  --color-accent-strong: #b8c2ff;
-  --color-white: #f9f9f9;
-  --color-black: #0b0d15;
+@import url('https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600&family=Hanken+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0');
 
-  --font-sans: 'Inter', sans-serif;
+@import "tailwindcss";
 
-  --spacing-xs: 0.5rem;
-  --spacing-sm: 1rem;
-  --spacing-md: 2rem;
-  --spacing-lg: 4rem;
-  --spacing-xl: 7rem;
+@theme {
+  /* Colors */
+  --color-secondary: #505f76;
+  --color-primary-container: #1b1b1b;
+  --color-secondary-container: #d0e1fb;
+  --color-primary-fixed-dim: #c6c6c6;
+  --color-surface-container-highest: #e2e2e2;
+  --color-on-primary: #ffffff;
+  --color-surface-variant: #e2e2e2;
+  --color-on-secondary-container: #54647a;
+  --color-surface-tint: #5e5e5e;
+  --color-outline: #7e7576;
+  --color-surface-bright: #f9f9f9;
+  --color-surface-elevated: #ffffff;
+  --color-on-secondary: #ffffff;
+  --color-primary-fixed: #e2e2e2;
+  --color-surface: #f9f9f9;
+  --color-background-subtle: #f9f9fb;
+  --color-surface-container: #eeeeee;
+  --color-on-primary-fixed: #1b1b1b;
+  --color-outline-variant: #cfc4c5;
+  --color-error: #ba1a1a;
+  --color-tertiary-fixed-dim: #c6c6c6;
+  --color-tertiary-container: #1b1b1b;
+  --color-secondary-fixed: #d3e4fe;
+  --color-border-base: #e2e8f0;
+  --color-surface-dim: #dadada;
+  --color-inverse-on-surface: #f1f1f1;
+  --color-on-secondary-fixed: #0b1c30;
+  --color-inverse-primary: #c6c6c6;
+  --color-on-tertiary: #ffffff;
+  --color-on-tertiary-container: #848484;
+  --color-tertiary-fixed: #e2e2e2;
+  --color-on-background: #1b1b1b;
+  --color-primary: #000000;
+  --color-on-tertiary-fixed: #1b1b1b;
+  --color-on-primary-container: #848484;
+  --color-surface-container-lowest: #ffffff;
+  --color-on-error: #ffffff;
+  --color-inverse-surface: #303030;
+  --color-accent-navy: #0f172a;
+  --color-background: #f9f9f9;
+  --color-surface-container-high: #e8e8e8;
+  --color-tertiary: #000000;
+  --color-error-container: #ffdad6;
+  --color-on-primary-fixed-variant: #474747;
+  --color-on-error-container: #93000a;
+  --color-on-secondary-fixed-variant: #38485d;
+  --color-secondary-fixed-dim: #b7c8e1;
+  --color-on-tertiary-fixed-variant: #474747;
+  --color-on-surface-variant: #4c4546;
+  --color-on-surface: #1b1b1b;
+  --color-surface-container-low: #f3f3f3;
 
-  --max-width: 1180px;
-  --header-height: 84px;
+  /* Border Radius */
+  --radius-DEFAULT: 0.125rem;
+  --radius-lg: 0.25rem;
+  --radius-xl: 0.5rem;
+  --radius-full: 0.75rem;
+
+  /* Spacing */
+  --spacing-gutter: 24px;
+  --spacing-base: 8px;
+  --spacing-margin-mobile: 16px;
+  --spacing-container-max: 1280px;
+  --spacing-margin-desktop: 40px;
+  --spacing-section-gap: 80px;
+
+  /* Font Families */
+  --font-headline-lg-mobile: "Hanken Grotesk", sans-serif;
+  --font-headline-lg: "Hanken Grotesk", sans-serif;
+  --font-headline-md: "Hanken Grotesk", sans-serif;
+  --font-headline-sm: "Hanken Grotesk", sans-serif;
+  --font-body-lg: "Inter", sans-serif;
+  --font-body-md: "Inter", sans-serif;
+  --font-body-sm: "Inter", sans-serif;
+  --font-label-md: "Geist", sans-serif;
+  --font-label-sm: "Geist", sans-serif;
+
+  /* Font Sizes */
+  --text-headline-lg-mobile: 32px;
+  --text-headline-lg-mobile--line-height: 40px;
+  --text-headline-lg: 48px;
+  --text-headline-lg--line-height: 56px;
+  --text-headline-lg--letter-spacing: -0.02em;
+  --text-headline-md: 32px;
+  --text-headline-md--line-height: 40px;
+  --text-headline-md--letter-spacing: -0.01em;
+  --text-headline-sm: 24px;
+  --text-headline-sm--line-height: 32px;
+  --text-body-lg: 18px;
+  --text-body-lg--line-height: 28px;
+  --text-body-md: 16px;
+  --text-body-md--line-height: 24px;
+  --text-body-sm: 14px;
+  --text-body-sm--line-height: 20px;
+  --text-label-md: 12px;
+  --text-label-md--line-height: 16px;
+  --text-label-md--letter-spacing: 0.05em;
+  --text-label-sm: 10px;
+  --text-label-sm--line-height: 12px;
+  --text-label-sm--letter-spacing: 0.05em;
 }
 
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-html {
-  font-family: var(--font-sans);
-  background-color: var(--color-bg);
-  color: var(--color-text);
-  scroll-behavior: smooth;
-}
-
+/* Global */
+* { box-sizing: border-box; }
 body {
-  line-height: 1.6;
+  background-color: #ffffff;
   -webkit-font-smoothing: antialiased;
-  min-height: 100vh;
-  background:
-    radial-gradient(circle at 10% 0%, rgba(111, 126, 208, 0.08), transparent 32%),
-    radial-gradient(circle at 85% 0%, rgba(111, 126, 208, 0.06), transparent 28%),
-    var(--color-bg);
 }
 
-h1, h2, h3, h4, h5, h6 {
-  font-family: var(--font-sans);
-  font-weight: 600;
-  line-height: 1.2;
+/* Material Symbols */
+.material-symbols-outlined {
+  font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
 }
 
-a {
-  color: inherit;
-  text-decoration: none;
-  transition: opacity 0.2s ease;
+/* Custom scrollbar */
+::-webkit-scrollbar { width: 8px; }
+::-webkit-scrollbar-track { background: #f9f9f9; }
+::-webkit-scrollbar-thumb { background: #e2e8f0; }
+::-webkit-scrollbar-thumb:hover { background: #c6c6c6; }
+
+/* ============================================================
+   Custom utility classes
+   ============================================================ */
+
+.rounded-DEFAULT { border-radius: 0.125rem; }
+
+/* --- Typography --- */
+.font-headline-lg {
+  font-family: "Hanken Grotesk", sans-serif;
+  font-size: 48px; line-height: 56px;
+  letter-spacing: -0.02em; font-weight: 600;
+}
+.font-headline-lg-mobile {
+  font-family: "Hanken Grotesk", sans-serif;
+  font-size: 32px; line-height: 40px; font-weight: 600;
+}
+.font-headline-md {
+  font-family: "Hanken Grotesk", sans-serif;
+  font-size: 32px; line-height: 40px;
+  letter-spacing: -0.01em; font-weight: 600;
+}
+.font-headline-sm {
+  font-family: "Hanken Grotesk", sans-serif;
+  font-size: 24px; line-height: 32px; font-weight: 500;
+}
+.font-body-lg {
+  font-family: "Inter", sans-serif;
+  font-size: 18px; line-height: 28px; font-weight: 400;
+}
+.font-body-md {
+  font-family: "Inter", sans-serif;
+  font-size: 16px; line-height: 24px; font-weight: 400;
+}
+.font-body-sm {
+  font-family: "Inter", sans-serif;
+  font-size: 14px; line-height: 20px; font-weight: 400;
+}
+.font-label-md {
+  font-family: "Geist", sans-serif;
+  font-size: 12px; line-height: 16px;
+  letter-spacing: 0.05em; font-weight: 500;
+}
+.font-label-sm {
+  font-family: "Geist", sans-serif;
+  font-size: 10px; line-height: 12px;
+  letter-spacing: 0.05em; font-weight: 600;
 }
 
-a:hover {
-  opacity: 0.8;
-}
+/* text-* size aliases */
+.text-headline-lg { font-size: 48px; line-height: 56px; letter-spacing: -0.02em; }
+.text-headline-lg-mobile { font-size: 32px; line-height: 40px; }
+.text-headline-md { font-size: 32px; line-height: 40px; letter-spacing: -0.01em; }
+.text-headline-sm { font-size: 24px; line-height: 32px; }
+.text-body-lg { font-size: 18px; line-height: 28px; }
+.text-body-md { font-size: 16px; line-height: 24px; }
+.text-body-sm { font-size: 14px; line-height: 20px; }
+.text-label-md { font-size: 12px; line-height: 16px; letter-spacing: 0.05em; }
+.text-label-sm { font-size: 10px; line-height: 12px; letter-spacing: 0.05em; }
 
-button, .cta-button {
-  font-family: var(--font-sans);
-  background: #f4f5f8;
-  color: #0e1118;
-  border: 1px solid rgba(255, 255, 255, 0.35);
-  padding: 0.62rem 1.05rem;
-  font-size: 0.9rem;
-  font-weight: 580;
-  cursor: pointer;
-  transition: all 0.2s ease;
-  border-radius: 999px;
-}
+/* --- Spacing --- */
+.px-margin-mobile  { padding-left: 16px; padding-right: 16px; }
+.py-section-gap    { padding-top: 80px; padding-bottom: 80px; }
+.gap-base          { gap: 8px; }
+.gap-gutter        { gap: 24px; }
+.ml-gutter         { margin-left: 24px; }
 
-button:hover, .cta-button:hover {
-  background: #ffffff;
-  color: #0c1018;
-  transform: translateY(-1px);
-}
+.max-w-container-max { max-width: 1280px; }
 
-.container {
-  max-width: var(--max-width);
-  margin: 0 auto;
-  padding: 0 1.4rem;
-}
-
-section {
-  padding: var(--spacing-xl) 0;
-}
-
-.text-center {
-  text-align: center;
-}
-
-.fade-in {
-  animation: fadeIn 1s ease-out;
-}
-
-@keyframes fadeIn {
-  from { opacity: 0; transform: translateY(20px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-
-@media (max-width: 768px) {
-  .container {
-    padding: 0 1rem;
+@media (min-width: 768px) {
+  .md\:px-margin-desktop {
+    padding-left: 40px;
+    padding-right: 40px;
   }
-
-  section {
-    padding: 4.5rem 0;
+  .md\:font-headline-lg {
+    font-family: "Hanken Grotesk", sans-serif;
+    font-size: 48px; line-height: 56px;
+    letter-spacing: -0.02em; font-weight: 600;
   }
-}
-
-@media (max-width: 480px) {
-  .container {
-    padding: 0 0.85rem;
-  }
+  .md\:text-headline-lg { font-size: 48px; line-height: 56px; letter-spacing: -0.02em; }
+  .md\:pt-\[120px\] { padding-top: 120px; }
+  .md\:gap-gutter { gap: 24px; }
+  .md\:flex-row { flex-direction: row; }
+  .md\:gap-8 { gap: 2rem; }
+  .md\:gap-16 { gap: 4rem; }
+  .md\:block { display: block; }
+  .md\:aspect-\[21\/9\] { aspect-ratio: 21/9; }
 }

@@ -1,140 +1,18 @@
 ---
+const currentYear = new Date().getFullYear();
 ---
-<footer id="empresa">
-  <div class="container footer-grid">
-    <div class="footer-brand">
-      <h2 class="footer-logo">ARGEMUS</h2>
-      <p class="footer-tagline">Infraestructura legal inteligente para equipos que operan con precisión.</p>
-    </div>
-    <div class="footer-links">
-      <div class="link-group">
-        <h3>Plataforma</h3>
-        <ul>
-          <li><a href="#">Soluciones</a></li>
-          <li><a href="#">Seguridad</a></li>
-          <li><a href="#">API</a></li>
-        </ul>
-      </div>
-      <div class="link-group">
-        <h3>Compañía</h3>
-        <ul>
-          <li><a href="#">Sobre Nosotros</a></li>
-          <li><a href="#">Carreras</a></li>
-          <li><a href="#">Contacto</a></li>
-        </ul>
-      </div>
-      <div class="link-group">
-        <h3>Legal</h3>
-        <ul>
-          <li><a href="#">Privacidad</a></li>
-          <li><a href="#">Términos</a></li>
-          <li><a href="#">Ética en IA</a></li>
-        </ul>
-      </div>
-    </div>
+<!-- Footer -->
+<footer class="w-full py-section-gap px-margin-mobile md:px-margin-desktop flex flex-col md:flex-row justify-between items-center gap-base border-t border-border-base bg-surface">
+  <div class="font-headline-sm text-headline-sm font-bold text-primary">
+    Argemus
   </div>
-  <div class="footer-bottom">
-    <div class="container">
-      <p>&copy; {new Date().getFullYear()} Argemus. Todos los derechos reservados.</p>
-    </div>
+  <nav aria-label="Footer" class="flex flex-wrap justify-center gap-4 md:gap-8">
+    <a class="font-label-sm text-label-sm text-secondary hover:text-primary transition-colors" href="#">Privacy Policy</a>
+    <a class="font-label-sm text-label-sm text-secondary hover:text-primary transition-colors" href="#">Terms of Service</a>
+    <a class="font-label-sm text-label-sm text-secondary hover:text-primary transition-colors" href="#">Security</a>
+    <a class="font-label-sm text-label-sm text-secondary hover:text-primary transition-colors" href="#">Contact</a>
+  </nav>
+  <div class="font-body-sm text-body-sm text-secondary">
+    © {currentYear} Argemus Intelligence. All rights reserved.
   </div>
 </footer>
-
-<style>
-  footer {
-    background-color: transparent;
-    padding-top: var(--spacing-xl);
-    border-top: 1px solid var(--color-border);
-  }
-
-  .footer-grid {
-    display: grid;
-    grid-template-columns: 1fr 1.4fr;
-    gap: var(--spacing-lg);
-    margin-bottom: 2.2rem;
-  }
-
-  .footer-logo {
-    font-size: 1rem;
-    font-weight: 600;
-    letter-spacing: 0.18em;
-    margin-bottom: 1rem;
-  }
-
-  .footer-tagline {
-    color: var(--color-muted);
-    max-width: 360px;
-    font-size: 0.95rem;
-  }
-
-  .footer-links {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 1.1rem;
-  }
-
-  .link-group h3 {
-    font-size: 0.8rem;
-    text-transform: uppercase;
-    letter-spacing: 0.1em;
-    margin-bottom: 1rem;
-    color: var(--color-text);
-  }
-
-  .link-group ul {
-    list-style: none;
-  }
-
-  .link-group li {
-    margin-bottom: 0.75rem;
-  }
-
-  .link-group a {
-    font-size: 0.88rem;
-    color: var(--color-muted);
-  }
-
-  .link-group a:hover {
-    color: var(--color-text);
-  }
-
-  .footer-bottom {
-    padding: 1.2rem 0 2rem;
-    border-top: 1px solid var(--color-border);
-    text-align: center;
-    font-size: 0.8rem;
-    color: var(--color-muted);
-  }
-
-  @media (max-width: 768px) {
-    .footer-grid {
-      grid-template-columns: 1fr;
-      gap: 1.4rem;
-      margin-bottom: 1.6rem;
-    }
-
-    .footer-tagline {
-      max-width: 100%;
-      font-size: 0.9rem;
-    }
-
-    .footer-links {
-      grid-template-columns: 1fr 1fr;
-      gap: 0.8rem;
-    }
-
-    .link-group h3 {
-      margin-bottom: 0.65rem;
-    }
-
-    .link-group li {
-      margin-bottom: 0.45rem;
-    }
-  }
-
-  @media (max-width: 420px) {
-    .footer-links {
-      grid-template-columns: 1fr;
-    }
-  }
-</style>
