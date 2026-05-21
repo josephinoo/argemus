@@ -1,0 +1,36 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Navbar from '../components/Navbar.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<Layout 
+	title="Argemus - Soporte Técnico"
+	description="Obtén ayuda y soporte técnico para el uso de la plataforma Argemus."
+>
+	<Navbar />
+
+	<main id="main-content" aria-label="Contenido principal" class="flex-grow flex flex-col items-center py-xl w-full">
+        <section class="w-full max-w-4xl mx-auto mb-section-gap pt-lg px-margin-mobile md:px-margin-desktop">
+            <h1 class="font-headline-lg-mobile md:font-headline-lg text-headline-lg-mobile md:text-headline-lg text-primary mb-md tracking-tight">
+                Soporte Técnico
+            </h1>
+            <div class="font-body-lg text-body-lg text-on-surface-variant max-w-3xl prose">
+                <p>Nuestro equipo de soporte está listo para ayudarte. Contáctanos a través de soporte@argemus.com o visita nuestro centro de ayuda en construcción.</p>
+            </div>
+        </section>
+	</main>
+
+	<Footer />
+</Layout>
+
+<style is:global>
+  body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background-color: #f8f9fa;
+    background-image: radial-gradient(#e1e3e4 1px, transparent 1px);
+    background-size: 24px 24px;
+  }
+</style>

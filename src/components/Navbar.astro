@@ -1,22 +1,29 @@
 ---
+const pathname = new URL(Astro.request.url).pathname;
+const currentPath = pathname === '/' ? '/' : pathname.replace(/\/$/, "");
 ---
 <!-- Skip to content -->
-<a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-50 focus:bg-primary focus:text-on-primary focus:px-4 focus:py-2 focus:rounded focus:font-label-md">
+<a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-50 focus:bg-primary focus:text-white focus:px-4 focus:py-2 focus:rounded font-medium">
   Saltar al contenido
 </a>
 <!-- TopNavBar -->
-<header class="fixed top-0 w-full z-50 flex justify-between items-center px-margin-mobile md:px-margin-desktop py-4 max-w-container-max mx-auto bg-surface/80 backdrop-blur-xl border-b border-border-base">
-  <div class="flex items-center gap-base md:gap-gutter">
-    <a class="font-headline-sm text-headline-sm font-semibold tracking-tight text-primary" href="#">Argemus</a>
-    <nav aria-label="Navegación principal" class="hidden md:flex gap-gutter items-center ml-gutter">
-      <a class="font-label-md text-label-md text-secondary hover:text-primary transition-colors duration-200 cursor-pointer" href="#">Platform</a>
-      <a class="font-label-md text-label-md text-secondary hover:text-primary transition-colors duration-200 cursor-pointer" href="#">Solutions</a>
-      <a class="font-label-md text-label-md text-secondary hover:text-primary transition-colors duration-200 cursor-pointer" href="#">Resources</a>
-      <a class="font-label-md text-label-md text-secondary hover:text-primary transition-colors duration-200 cursor-pointer" href="#">Pricing</a>
+<header class="glass-nav fixed w-full top-0 z-50">
+  <div class="flex justify-between items-center w-full px-4 md:px-16 h-16 max-w-7xl mx-auto">
+    <div class="font-bold text-xl text-gray-900 tracking-tight flex items-center gap-2">
+      <a href="/" class="flex items-center gap-2 hover:opacity-80 transition-opacity">
+        <span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 1;">gavel</span>
+        Argemus
+      </a>
+    </div>
+    <nav aria-label="Navegación principal" class="hidden md:flex gap-8 items-center">
+      <a class={`text-sm transition-colors duration-150 ${currentPath === '/' ? 'text-gray-900 font-medium' : 'text-gray-600 hover:text-gray-900'}`} href="/">Jurisprudencia</a>
+      <a class={`text-sm transition-colors duration-150 ${currentPath === '/precios' ? 'text-gray-900 font-medium' : 'text-gray-600 hover:text-gray-900'}`} href="/precios">Precios</a>
+      <a class={`text-sm transition-colors duration-150 ${currentPath === '/metodologia' ? 'text-gray-900 font-medium' : 'text-gray-600 hover:text-gray-900'}`} href="/metodologia">Metodología</a>
+      <a class={`text-sm transition-colors duration-150 ${currentPath === '/contacto' ? 'text-gray-900 font-medium' : 'text-gray-600 hover:text-gray-900'}`} href="/contacto">Contacto</a>
     </nav>
-  </div>
-  <div class="flex items-center gap-base">
-    <a class="hidden md:block font-label-md text-label-md text-secondary hover:text-primary transition-colors duration-200 cursor-pointer" href="#">Log In</a>
-    <a class="bg-primary text-on-primary font-label-md text-label-md px-4 py-2 rounded-DEFAULT hover:opacity-90 transition-opacity cursor-pointer" href="#">Get Started</a>
+    <div class="flex gap-4 items-center">
+      <a class="hidden md:block text-sm text-gray-600 hover:text-gray-900 transition-colors cursor-pointer" href="#">Iniciar Sesión</a>
+      <a class="text-sm text-white bg-primary px-4 py-1.5 rounded-full font-medium hover:bg-primary-container transition-colors cursor-pointer" href="#">Empezar Gratis</a>
+    </div>
   </div>
 </header>

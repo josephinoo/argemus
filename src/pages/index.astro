@@ -3,27 +3,18 @@ import Layout from '../layouts/Layout.astro';
 import Navbar from '../components/Navbar.astro';
 import Hero from '../components/Hero.astro';
 import SocialProof from '../components/SocialProof.astro';
+import CtaSection from '../components/CtaSection.astro';
 import Footer from '../components/Footer.astro';
 ---
 
-<Layout 
-	title="Argemus - Práctica legal de alto rendimiento"
-	description="Transforme su práctica jurídica con IA especializada. Analice contratos, acelere procesos de due diligence y mitigue riesgos operativos con la precisión que exigen los mejores equipos legales."
->
-	<Navbar />
+<Layout title="Argemus">
+  <Navbar />
+  
+  <main class="flex-grow flex flex-col items-center justify-center pt-16 pb-xl w-full" id="main-content">
+    <Hero />
+    <SocialProof />
+    <CtaSection />
+  </main>
 
-	<main id="main-content" aria-label="Contenido principal" class="flex-grow pt-[100px] md:pt-[120px]">
-		<Hero />
-		<SocialProof />
-	</main>
-
-	<Footer />
+  <Footer />
 </Layout>
-
-<style is:global>
-  body {
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-  }
-</style>

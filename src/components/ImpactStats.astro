@@ -1,98 +1,19 @@
 ---
 ---
-<section class="impact" id="impacto">
-  <div class="container">
-    <h2 class="section-title">Resultados medibles para operaciones legales modernas</h2>
-    <div class="stats-grid">
-      <div class="stat-item">
-        <span class="stat-number">90%</span>
-        <p class="stat-label">Reducción en tiempo de investigación</p>
-      </div>
-      <div class="stat-item">
-        <span class="stat-number">24/7</span>
-        <p class="stat-label">Disponibilidad de análisis jurídico</p>
-      </div>
-      <div class="stat-item">
-        <span class="stat-number">500+</span>
-        <p class="stat-label">Firmas confían en nosotros</p>
-      </div>
+<!-- Stats Section -->
+<section class="w-full max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop border-y border-outline-variant py-lg mb-section-gap">
+  <div class="grid grid-cols-1 md:grid-cols-3 gap-gutter" data-animate-group>
+    <div class="text-center" data-animate="stagger">
+      <div class="font-headline-lg text-headline-lg text-primary mb-xs">10M+</div>
+      <div class="font-body-sm text-body-sm text-on-surface-variant">Sentencias Procesadas</div>
+    </div>
+    <div class="text-center border-outline-variant md:border-l pt-md md:pt-0" data-animate="stagger">
+      <div class="font-headline-lg text-headline-lg text-primary mb-xs">&lt; 1s</div>
+      <div class="font-body-sm text-body-sm text-on-surface-variant">Tiempo de respuesta</div>
+    </div>
+    <div class="text-center border-outline-variant md:border-l pt-md md:pt-0" data-animate="stagger">
+      <div class="font-headline-lg text-headline-lg text-primary mb-xs">99.9%</div>
+      <div class="font-body-sm text-body-sm text-on-surface-variant">Precisión</div>
     </div>
   </div>
 </section>
-
-<style>
-  .impact {
-    padding-top: var(--spacing-lg);
-  }
-
-  .section-title {
-    font-size: clamp(1.8rem, 3vw, 2.4rem);
-    margin-bottom: 1.8rem;
-    max-width: 620px;
-    letter-spacing: -0.01em;
-  }
-
-  .stats-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 1rem;
-  }
-
-  .stat-item {
-    padding: 1.25rem;
-    border-radius: 0;
-    border: 0;
-    background: transparent;
-    transition: transform 0.2s ease, border-color 0.2s ease;
-    animation: fadeIn 900ms ease both;
-  }
-
-  .stat-item:hover {
-    transform: translateY(-3px);
-  }
-
-  .stat-number {
-    display: block;
-    font-size: clamp(2.2rem, 5vw, 3.2rem);
-    font-weight: 700;
-    margin-bottom: 0.4rem;
-    color: var(--color-text);
-  }
-
-  .stat-label {
-    font-size: 0.95rem;
-    color: var(--color-muted);
-    font-weight: 500;
-  }
-
-  @media (max-width: 768px) {
-    .section-title {
-      font-size: clamp(1.5rem, 7vw, 1.9rem);
-      margin-bottom: 1.1rem;
-    }
-
-    .stats-grid {
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 0.55rem;
-    }
-
-    .stat-item {
-      padding: 0.85rem 0.25rem;
-    }
-
-    .stat-number {
-      font-size: clamp(1.6rem, 8vw, 2.1rem);
-    }
-
-    .stat-label {
-      font-size: 0.82rem;
-      line-height: 1.35;
-    }
-  }
-
-  @media (max-width: 420px) {
-    .stats-grid {
-      grid-template-columns: 1fr;
-    }
-  }
-</style>

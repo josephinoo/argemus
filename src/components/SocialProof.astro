@@ -1,15 +1,87 @@
 ---
 ---
-<!-- Trust Section -->
-<section class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop py-section-gap border-t border-border-base">
-  <h3 class="font-label-sm text-label-sm text-secondary text-center mb-8 uppercase tracking-widest">
-    CON LA CONFIANZA DE EQUIPOS LEGALES DE ALTO DESEMPEÑO
-  </h3>
-  <div class="flex flex-wrap justify-center items-center gap-8 md:gap-16 opacity-60 grayscale hover:grayscale-0 transition-all duration-500">
-    <div class="font-headline-sm text-headline-sm font-bold tracking-tight text-primary">GARRIGUES</div>
-    <div class="font-headline-sm text-headline-sm font-semibold tracking-wide text-primary">CUATRECASAS</div>
-    <div class="font-headline-sm text-headline-sm font-medium tracking-tighter text-primary">URÍA MENÉNDEZ</div>
-    <div class="font-headline-sm text-headline-sm font-bold text-primary">PÉREZ-LLORCA</div>
-    <div class="font-headline-sm text-headline-sm font-medium tracking-wide text-primary">CLIFFORD CHANCE</div>
+<!-- Benefits Section (Bento Box) -->
+<section class="w-full max-w-6xl mx-auto mb-32 relative z-10 px-4 md:px-0">
+  <div class="mb-16">
+    <h2 data-animate="fade-up" class="text-3xl md:text-4xl font-bold text-gray-900 tracking-tight mb-4 text-center">Menos tiempo buscando. Más tiempo argumentando.</h2>
+    <p data-animate="fade-up" class="text-gray-600 text-center max-w-2xl mx-auto">Un sistema diseñado para despachos modernos y flujos de trabajo impulsados por IA.</p>
+  </div>
+  <div class="grid grid-cols-1 md:grid-cols-3 gap-6" data-animate-group>
+    <!-- Card 1: Spans 2 columns -->
+    <div class="bento-card p-8 rounded-2xl md:col-span-2 flex flex-col justify-between min-h-[300px]" data-animate="stagger">
+      <div>
+        <div class="w-10 h-10 rounded-lg bg-black/5 border border-black/10 flex items-center justify-center mb-6 legal-icon-container">
+          <span class="material-symbols-outlined text-primary balance-icon" style="font-variation-settings: 'FILL' 0;">balance</span>
+        </div>
+        <h3 class="text-xl font-semibold text-gray-900 mb-3 tracking-tight">Precisión AI</h3>
+        <p class="text-gray-600 leading-relaxed max-w-[28rem]">Nuestro modelo entiende el contexto legal, no solo palabras clave. Encuentra precedentes exactos para tu caso analizando la estructura profunda de los argumentos.</p>
+      </div>
+    </div>
+    <!-- Card 2 -->
+    <div class="bento-card p-8 rounded-2xl flex flex-col justify-between min-h-[300px]" data-animate="stagger">
+      <div>
+        <div class="w-10 h-10 rounded-lg bg-black/5 border border-black/10 flex items-center justify-center mb-6">
+          <span class="material-symbols-outlined text-primary clock-icon" style="font-variation-settings: 'FILL' 0;">schedule</span>
+        </div>
+        <h3 class="text-xl font-semibold text-gray-900 mb-3 tracking-tight">Rapidez Judicial</h3>
+        <p class="text-gray-600 leading-relaxed">Resultados instantáneos de la Corte Nacional, Constitucional y tribunales locales. Optimiza tus horas facturables.</p>
+      </div>
+    </div>
+    <!-- Card 3: Full width or large -->
+    <div class="bento-card p-8 rounded-2xl md:col-span-3 flex flex-col md:flex-row gap-8 items-center justify-between group" data-animate="stagger">
+      <div class="max-w-[36rem]">
+        <div class="w-10 h-10 rounded-lg bg-black/5 border border-black/10 flex items-center justify-center mb-6">
+          <span class="material-symbols-outlined text-primary filter-icon" style="font-variation-settings: 'FILL' 0;">filter_list</span>
+        </div>
+        <h3 class="text-xl font-semibold text-gray-900 mb-3 tracking-tight">Filtros Avanzados</h3>
+        <p class="text-gray-600 leading-relaxed">Filtra por juez, sala, fecha, materia o resultado. Reduce el ruido y enfócate en la jurisprudencia vinculante de manera quirúrgica.</p>
+      </div>
+      <!-- Decorative UI Placeholder showing document analysis -->
+      <div class="w-full md:w-1/3 h-32 bg-black/5 rounded-xl border border-black/10 flex flex-col gap-2 p-4 justify-center overflow-hidden relative shadow-inner">
+         <div class="h-2 w-3/4 bg-gray-300 rounded doc-line-1"></div>
+         <div class="h-2 w-full bg-gray-300 rounded doc-line-2"></div>
+         <div class="h-2 w-5/6 bg-gray-300 rounded doc-line-3"></div>
+         <div class="h-2 w-1/2 bg-primary/40 rounded doc-line-4 mt-2"></div>
+         <!-- Scanner line -->
+         <div class="absolute inset-0 bg-gradient-to-b from-transparent via-primary/10 to-transparent w-full h-8 scanner-line"></div>
+      </div>
+    </div>
   </div>
 </section>
+
+<!-- Custom GSAP logic for legal animations -->
+<script is:inline>
+  document.addEventListener("DOMContentLoaded", () => {
+    // Balanza legal animacion
+    gsap.utils.toArray('.bento-card').forEach(card => {
+      card.addEventListener('mouseenter', () => {
+        const balance = card.querySelector('.balance-icon');
+        if (balance) {
+          gsap.fromTo(balance, 
+            { rotation: 0 },
+            { rotation: 15, duration: 0.15, yoyo: true, repeat: 3, ease: "sine.inOut" }
+          );
+        }
+
+        const clock = card.querySelector('.clock-icon');
+        if (clock) {
+          gsap.to(clock, { rotation: "+=45", duration: 0.3, ease: "back.out(1.7)" });
+        }
+        
+        const filter = card.querySelector('.filter-icon');
+        if (filter) {
+          gsap.fromTo(filter, 
+            { y: -3 }, 
+            { y: 3, duration: 0.2, yoyo: true, repeat: 1, ease: "power1.inOut" }
+          );
+        }
+      });
+    });
+
+    // Scanner loop animation
+    gsap.fromTo(".scanner-line", 
+      { y: -20, opacity: 0 },
+      { y: 100, opacity: 1, duration: 2, repeat: -1, ease: "linear" }
+    );
+  });
+</script>

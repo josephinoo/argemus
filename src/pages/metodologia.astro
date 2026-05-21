@@ -1,0 +1,39 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Navbar from '../components/Navbar.astro';
+import Footer from '../components/Footer.astro';
+import CtaSection from '../components/CtaSection.astro';
+---
+
+<Layout 
+	title="Argemus - Metodología"
+	description="Descubre cómo procesamos y analizamos miles de sentencias utilizando inteligencia artificial avanzada para ofrecerte resultados precisos."
+>
+	<Navbar />
+
+	<main id="main-content" aria-label="Contenido principal" class="flex-grow flex flex-col items-center py-xl w-full">
+        <section class="text-center w-full max-w-4xl mx-auto mb-section-gap pt-lg px-margin-mobile md:px-margin-desktop">
+            <h1 class="font-headline-lg-mobile md:font-headline-lg text-headline-lg-mobile md:text-headline-lg text-primary mb-md tracking-tight">
+                Nuestra Metodología
+            </h1>
+            <p class="font-body-lg text-body-lg text-on-surface-variant mb-xl max-w-2xl mx-auto">
+                Tecnología de vanguardia aplicada al análisis jurisprudencial para garantizar precisión, rapidez y relevancia en cada búsqueda.
+            </p>
+        </section>
+        
+        <CtaSection />
+	</main>
+
+	<Footer />
+</Layout>
+
+<style is:global>
+  body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background-color: #f8f9fa;
+    background-image: radial-gradient(#e1e3e4 1px, transparent 1px);
+    background-size: 24px 24px;
+  }
+</style>

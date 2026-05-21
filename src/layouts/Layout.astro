@@ -96,8 +96,79 @@ const structuredData = {
 		<!-- Preconnect for performance -->
 		<link rel="preconnect" href="https://fonts.googleapis.com" />
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+		<!-- GSAP -->
+		<script is:inline src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+		<script is:inline src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+
+		<!-- Hide animated elements before JS runs to prevent flash -->
+		<style>
+			[data-animate] { opacity: 0; }
+		</style>
 	</head>
 	<body class="bg-background text-on-background font-body-md antialiased overflow-x-hidden selection:bg-primary-container selection:text-on-primary-container">
 		<slot />
+
+		<!-- Global GSAP Animations -->
+		<script is:inline>
+			(function () {
+				gsap.registerPlugin(ScrollTrigger);
+
+				// ── Hero: staggered entrance on page load ──────────────────
+				const heroEls = document.querySelectorAll('[data-animate="hero"]');
+				if (heroEls.length) {
+					gsap.fromTo(heroEls,
+						{ opacity: 0, y: 28 },
+						{
+							opacity: 1, y: 0,
+							duration: 0.72,
+							ease: 'power2.out',
+							stagger: 0.12,
+							delay: 0.1,
+							clearProps: 'transform'
+						}
+					);
+				}
+
+				// ── Scroll-triggered fade-up (individual elements) ─────────
+				document.querySelectorAll('[data-animate="fade-up"]').forEach(function (el) {
+					gsap.fromTo(el,
+						{ opacity: 0, y: 24 },
+						{
+							opacity: 1, y: 0,
+							duration: 0.65,
+							ease: 'power2.out',
+							clearProps: 'transform',
+							scrollTrigger: {
+								trigger: el,
+								start: 'top 88%',
+								once: true,
+							}
+						}
+					);
+				});
+
+				// ── Scroll-triggered stagger groups ────────────────────────
+				document.querySelectorAll('[data-animate-group]').forEach(function (group) {
+					const children = group.querySelectorAll('[data-animate="stagger"]');
+					if (!children.length) return;
+					gsap.fromTo(children,
+						{ opacity: 0, y: 20 },
+						{
+							opacity: 1, y: 0,
+							duration: 0.6,
+							ease: 'power2.out',
+							stagger: 0.1,
+							clearProps: 'transform',
+							scrollTrigger: {
+								trigger: group,
+								start: 'top 85%',
+								once: true,
+							}
+						}
+					);
+				});
+			})();
+		</script>
 	</body>
 </html>
