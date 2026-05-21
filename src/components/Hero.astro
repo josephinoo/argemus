@@ -10,8 +10,8 @@
     Nuevo: Inteligencia Jurídica 2.0
   </div>
   <h1 
-    data-animate="hero"
-    class="font-display text-5xl md:text-7xl text-gray-900 mb-6 font-bold tracking-tighter leading-tight"
+    id="hero-main-title"
+    class="font-display text-5xl md:text-7xl text-gray-900 mb-6 font-bold tracking-tighter leading-tight opacity-0"
   >
     La inteligencia artificial para la jurisprudencia ecuatoriana.
   </h1>
@@ -57,3 +57,50 @@
     </div>
   </div>
 </section>
+
+<script is:inline>
+  document.addEventListener("DOMContentLoaded", () => {
+    const title = document.getElementById('hero-main-title');
+    if (!title) return;
+
+    // Remove the initial opacity-0 class now that JS is running
+    title.classList.remove('opacity-0');
+
+    // Split text into words
+    const text = title.innerText;
+    title.innerHTML = '';
+    
+    const words = text.split(' ');
+    words.forEach((word, index) => {
+      const span = document.createElement('span');
+      // Adding inline-block and hiding overflow for a "reveal from bottom" effect per word
+      span.style.display = 'inline-block';
+      span.style.overflow = 'hidden';
+      span.style.verticalAlign = 'bottom';
+      // Adding margin-right for the space between words, except the last one
+      if (index < words.length - 1) span.style.marginRight = '0.25em';
+      
+      const innerSpan = document.createElement('span');
+      innerSpan.style.display = 'inline-block';
+      innerSpan.innerText = word;
+      innerSpan.classList.add('hero-word-inner');
+      
+      span.appendChild(innerSpan);
+      title.appendChild(span);
+    });
+
+    // Animate words discovering/rising up
+    gsap.fromTo('.hero-word-inner',
+      { y: '100%', opacity: 0, rotateZ: 5 },
+      { 
+        y: '0%', 
+        opacity: 1, 
+        rotateZ: 0,
+        duration: 0.8, 
+        stagger: 0.05, 
+        ease: 'power3.out',
+        delay: 0.1
+      }
+    );
+  });
+</script>
