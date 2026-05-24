@@ -2,18 +2,45 @@
 import Layout from '../layouts/Layout.astro';
 import Navbar from '../components/Navbar.astro';
 import Hero from '../components/Hero.astro';
+import HeroBackground from '../components/HeroBackground.astro';
+import FeatureSection from '../components/FeatureSection.astro';
+import ImpactStats from '../components/ImpactStats.astro';
 import SocialProof from '../components/SocialProof.astro';
 import CtaSection from '../components/CtaSection.astro';
 import Footer from '../components/Footer.astro';
 ---
 
-<Layout title="Argemus">
+<Layout title="Argemus | Inteligencia artificial para la jurisprudencia ecuatoriana">
+  <HeroBackground />
   <Navbar />
   
-  <main class="flex-grow flex flex-col items-center justify-center pt-16 pb-xl w-full" id="main-content">
-    <Hero />
-    <SocialProof />
-    <CtaSection />
+  <main class="flex-grow flex flex-col items-center justify-center pt-16 w-full relative z-10" id="main-content">
+    
+    <!-- Hero & Demo Section -->
+    <div class="relative w-full mb-32 z-20">
+      <Hero />
+    </div>
+
+    <!-- Features Section (Benefits) -->
+    <div class="relative w-full z-30 bg-gray-50 rounded-t-[3rem] border-t border-gray-200">
+      <FeatureSection />
+    </div>
+
+    <!-- Impact Stats -->
+    <div class="relative w-full z-40 bg-white">
+      <ImpactStats />
+    </div>
+
+    <!-- Testimonials -->
+    <div class="relative w-full z-30 bg-gray-50 border-t border-gray-200">
+      <SocialProof />
+    </div>
+
+    <!-- Final CTA -->
+    <div class="relative w-full z-50 bg-white border-t border-gray-200 pb-20">
+      <CtaSection />
+    </div>
+    
   </main>
 
   <Footer />

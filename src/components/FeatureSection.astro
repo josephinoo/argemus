@@ -1,211 +1,64 @@
 ---
-interface Props {
-  title: string;
-  description: string;
-  reverse?: boolean;
-  tag?: string;
-  variant?: 'analysis' | 'automation';
-}
-
-const { title, description, reverse = false, tag, variant = 'analysis' } = Astro.props;
+const features = [
+  {
+    icon: 'search_insights',
+    title: 'Búsqueda Semántica',
+    description: 'Encuentra jurisprudencia por concepto o problema jurídico, no solo por palabras clave exactas.'
+  },
+  {
+    icon: 'bolt',
+    title: 'Resultados en Segundos',
+    description: 'Reduce horas de investigación a milisegundos gracias a nuestra infraestructura de IA de baja latencia.'
+  },
+  {
+    icon: 'gavel',
+    title: 'Precisión Legal',
+    description: 'Modelos entrenados específicamente con corpus legal ecuatoriano para garantizar relevancia y exactitud.'
+  },
+  {
+    icon: 'summarize',
+    title: 'Resúmenes Automáticos',
+    description: 'Extrae la ratio decidendi y los puntos clave de sentencias de cientos de páginas al instante.'
+  },
+  {
+    icon: 'notifications_active',
+    title: 'Alertas Jurisprudenciales',
+    description: 'Mantente al día con cambios de criterio en la Corte Nacional y Corte Constitucional.'
+  },
+  {
+    icon: 'verified_user',
+    title: 'Privacidad Enterprise',
+    description: 'Tus búsquedas e información están cifradas. Nunca entrenamos modelos con tus datos privados.'
+  }
+];
 ---
-<section class={`feature ${reverse ? 'reverse' : ''}`} id="soluciones">
-  <div class="container feature-grid">
-    <div class="feature-text">
-      {tag && <span class="tag">{tag}</span>}
-      <h2 class="feature-title">{title}</h2>
-      <p class="feature-description">{description}</p>
-      <ul class="feature-list">
-        <li>Búsqueda semántica en bases de datos legales</li>
-        <li>Análisis de riesgos contractuales automatizado</li>
-        <li>Generación de borradores de alta precisión</li>
-      </ul>
-      <a href="#" class="feature-link">Explorar Capacidades →</a>
-    </div>
-    <div class="feature-visual" aria-hidden="true">
-      {variant === 'analysis' ? (
-        <svg viewBox="0 0 540 360" role="img">
-          <defs>
-            <linearGradient id="g1" x1="0%" y1="0%" x2="100%" y2="100%">
-              <stop offset="0%" stop-color="#8f9dff" stop-opacity="0.38" />
-              <stop offset="100%" stop-color="#8f9dff" stop-opacity="0.04" />
-            </linearGradient>
-          </defs>
-          <rect x="20" y="20" width="500" height="320" rx="18" fill="url(#g1)" />
-          <rect x="52" y="56" width="436" height="34" rx="8" fill="rgba(255,255,255,0.08)" />
-          <rect x="52" y="108" width="190" height="206" rx="10" fill="rgba(255,255,255,0.06)" />
-          <rect x="258" y="108" width="230" height="92" rx="10" fill="rgba(255,255,255,0.06)" />
-          <rect x="258" y="220" width="108" height="94" rx="10" fill="rgba(255,255,255,0.06)" />
-          <rect x="380" y="220" width="108" height="94" rx="10" fill="rgba(255,255,255,0.06)" />
-          <path d="M78 178 C120 130, 170 210, 220 160" stroke="#c3ccff" stroke-width="4" fill="none" />
-          <circle cx="220" cy="160" r="6" fill="#c3ccff" />
-        </svg>
-      ) : (
-        <svg viewBox="0 0 540 360" role="img">
-          <defs>
-            <linearGradient id="g2" x1="0%" y1="0%" x2="100%" y2="100%">
-              <stop offset="0%" stop-color="#9fb2ff" stop-opacity="0.3" />
-              <stop offset="100%" stop-color="#9fb2ff" stop-opacity="0.03" />
-            </linearGradient>
-          </defs>
-          <rect x="20" y="20" width="500" height="320" rx="18" fill="url(#g2)" />
-          <rect x="52" y="58" width="436" height="38" rx="10" fill="rgba(255,255,255,0.08)" />
-          <rect x="52" y="114" width="436" height="54" rx="10" fill="rgba(255,255,255,0.06)" />
-          <rect x="52" y="182" width="436" height="54" rx="10" fill="rgba(255,255,255,0.06)" />
-          <rect x="52" y="250" width="300" height="54" rx="10" fill="rgba(255,255,255,0.06)" />
-          <circle cx="76" cy="141" r="8" fill="#c3ccff" />
-          <circle cx="76" cy="209" r="8" fill="#c3ccff" />
-          <circle cx="76" cy="277" r="8" fill="#c3ccff" />
-        </svg>
-      )}
-    </div>
+
+<section class="w-full max-w-6xl mx-auto py-24 px-4 md:px-8">
+  <div class="text-center max-w-2xl mx-auto mb-16" data-animate="fade-up">
+    <h2 class="font-display text-3xl md:text-5xl font-bold tracking-tight text-gray-900 mb-4">
+      La ventaja competitiva para litigantes
+    </h2>
+    <p class="text-lg text-gray-500">
+      Todo lo que necesitas para construir argumentos ganadores con respaldo jurisprudencial en una fracción del tiempo.
+    </p>
+  </div>
+
+  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" data-animate-group>
+    {features.map((feature) => (
+      <div 
+        data-animate="stagger"
+        class="bg-white/60 backdrop-blur-sm border border-gray-100 p-8 rounded-2xl shadow-sm hover:shadow-md transition-all duration-300 group"
+      >
+        <div class="w-12 h-12 bg-gray-50 rounded-xl border border-gray-100 flex items-center justify-center mb-6 group-hover:scale-110 group-hover:bg-primary/5 group-hover:border-primary/10 transition-transform duration-300">
+          <span class="material-symbols-outlined text-gray-700 group-hover:text-primary transition-colors" style="font-variation-settings: 'FILL' 0;">
+            {feature.icon}
+          </span>
+        </div>
+        <h3 class="text-xl font-bold text-gray-900 mb-3">{feature.title}</h3>
+        <p class="text-gray-500 leading-relaxed text-sm">
+          {feature.description}
+        </p>
+      </div>
+    ))}
   </div>
 </section>
-
-<style>
-  .feature {
-    background-color: transparent;
-  }
-
-  .feature-grid {
-    max-width: 1080px;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 1.15rem;
-    align-items: stretch;
-  }
-
-  .feature-text {
-    padding: 0;
-    border: 0;
-    border-radius: 0;
-    background: transparent;
-    animation: fadeUp 700ms ease both;
-  }
-
-  .reverse .feature-text {
-    animation-delay: 120ms;
-  }
-
-  .reverse .feature-grid {
-    direction: rtl;
-  }
-
-  .reverse .feature-text,
-  .reverse .feature-visual {
-    direction: ltr;
-  }
-
-  .tag {
-    color: var(--color-accent-strong);
-    font-size: 0.8rem;
-    text-transform: uppercase;
-    font-weight: 600;
-    letter-spacing: 0.12em;
-    margin-bottom: 1rem;
-    display: block;
-  }
-
-  .feature-title {
-    font-family: var(--font-sans);
-    font-size: clamp(2rem, 3.5vw, 3rem);
-    margin-bottom: 1rem;
-    line-height: 1.1;
-    letter-spacing: -0.01em;
-  }
-
-  .feature-description {
-    font-size: 1rem;
-    color: var(--color-muted);
-    margin-bottom: 1.7rem;
-  }
-
-  .feature-list {
-    list-style: none;
-    margin-bottom: 2rem;
-  }
-
-  .feature-list li {
-    margin-bottom: 0.6rem;
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    font-size: 0.95rem;
-    color: rgba(240, 244, 255, 0.9);
-  }
-
-  .feature-list li::before {
-    content: "•";
-    color: var(--color-accent);
-    font-weight: bold;
-  }
-
-  .feature-link {
-    font-weight: 600;
-    color: var(--color-accent-strong);
-    border-bottom: 1px solid var(--color-accent-strong);
-    padding-bottom: 4px;
-  }
-
-  .feature-visual {
-    border: 0;
-    border-radius: 0;
-    background: transparent;
-    padding: 0;
-    animation: fadeUp 700ms ease both;
-    animation-delay: 160ms;
-  }
-
-  .feature-visual svg {
-    display: block;
-    width: 100%;
-    height: auto;
-  }
-
-  @media (max-width: 992px) {
-    .feature-grid {
-      grid-template-columns: 1fr;
-      text-align: left;
-      gap: 1.4rem;
-    }
-    .feature-list li {
-      justify-content: flex-start;
-    }
-    .reverse .feature-grid {
-      direction: ltr;
-    }
-
-    .feature-visual {
-      max-width: 560px;
-    }
-  }
-
-  @media (max-width: 768px) {
-    .feature-title {
-      font-size: clamp(1.65rem, 8vw, 2.2rem);
-    }
-
-    .feature-description {
-      font-size: 0.95rem;
-      margin-bottom: 1.2rem;
-    }
-
-    .feature-list {
-      margin-bottom: 1.2rem;
-    }
-
-    .feature-list li {
-      font-size: 0.9rem;
-      margin-bottom: 0.45rem;
-    }
-
-    .feature-visual {
-      display: none;
-    }
-  }
-
-  @keyframes fadeUp {
-    from { opacity: 0; transform: translateY(14px); }
-    to { opacity: 1; transform: translateY(0); }
-  }
-</style>
