@@ -1,46 +1,51 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import HeroBackground from '../components/HeroBackground.astro';
 import Navbar from '../components/Navbar.astro';
 import Hero from '../components/Hero.astro';
-import HeroBackground from '../components/HeroBackground.astro';
-import FeatureSection from '../components/FeatureSection.astro';
 import ImpactStats from '../components/ImpactStats.astro';
-import SocialProof from '../components/SocialProof.astro';
-import CtaSection from '../components/CtaSection.astro';
+import FeatureSection from '../components/FeatureSection.astro';
+import PlatformFeatures from '../components/PlatformFeatures.astro';
+import LitigantsAdvantage from '../components/LitigantsAdvantage.astro';
+import HowItWorks from '../components/HowItWorks.astro';
+import Testimonials from '../components/Testimonials.astro';
 import Footer from '../components/Footer.astro';
 ---
 
 <Layout title="Argemus | Inteligencia artificial para la jurisprudencia ecuatoriana">
-  <HeroBackground />
   <Navbar />
   
-  <main class="flex-grow flex flex-col items-center justify-center pt-16 w-full relative z-10" id="main-content">
+  <HeroBackground />
+
+  <main class="flex-grow flex flex-col pt-16 w-full relative z-10" id="main-content">
     
     <!-- Hero & Demo Section -->
-    <div class="relative w-full mb-32 z-20">
+    <div class="relative w-full mb-8 z-20">
       <Hero />
     </div>
 
-    <!-- Features Section (Benefits) -->
-    <div class="relative w-full z-30 bg-gray-50 rounded-t-[3rem] border-t border-gray-200">
-      <FeatureSection />
+    <!-- Impact Stats Section -->
+    <div class="w-full max-w-6xl mx-auto px-4 relative z-30 -mt-10 mb-20">
+      <div class="bg-white rounded-3xl outline outline-1 outline-offset-[-1px] outline-gray-200 shadow-lg relative overflow-hidden" data-animate="fade-up">
+        <ImpactStats />
+      </div>
     </div>
 
-    <!-- Impact Stats -->
-    <div class="relative w-full z-40 bg-white">
-      <ImpactStats />
-    </div>
+    <!-- Platform Features Grid (La plataforma) -->
+    <PlatformFeatures />
 
-    <!-- Testimonials -->
-    <div class="relative w-full z-30 bg-gray-50 border-t border-gray-200">
-      <SocialProof />
-    </div>
+    <!-- Litigants Advantage (Construido para el oficio) -->
+    <LitigantsAdvantage />
 
-    <!-- Final CTA -->
-    <div class="relative w-full z-50 bg-white border-t border-gray-200 pb-20">
-      <CtaSection />
-    </div>
-    
+    <!-- Features Section (Pregunta. Profundiza. Decide.) -->
+    <FeatureSection />
+
+    <!-- How It Works (Cómo funciona) -->
+    <HowItWorks />
+
+    <!-- Testimonials (Nuestros Clientes) -->
+    <Testimonials />
+
   </main>
 
   <Footer />

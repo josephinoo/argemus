@@ -1,51 +1,54 @@
 ---
 const currentYear = new Date().getFullYear();
 ---
-<!-- Footer -->
-<footer class="border-t border-black/10 bg-surface pt-16 pb-8">
-  <div class="max-w-7xl mx-auto px-4 md:px-16">
-    <div class="grid grid-cols-2 md:grid-cols-5 gap-8 mb-16">
-      <div class="col-span-2 md:col-span-2">
-        <div class="font-bold text-xl text-gray-900 mb-4 tracking-tight flex items-center gap-2">
-          <span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 1;">gavel</span>
-          Argemus
+
+<footer class="border-t border-[#e0e5eb] bg-[#faf4ec] pt-20 pb-12 w-full z-10 relative">
+  <div class="max-w-6xl mx-auto px-4">
+    <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-20">
+      
+      <!-- Brand & Mission -->
+      <div class="col-span-1 md:col-span-1">
+        <p class="font-body-sm text-[14px] leading-[21.7px] text-brand-gray mb-6">
+          Inteligencia jurídica para litigantes del Ecuador.<br/>
+          Construido con respeto por la profesión y por la verdad.
+        </p>
+      </div>
+
+      <!-- Links -->
+      <div class="md:col-span-3 grid grid-cols-1 sm:grid-cols-3 gap-8">
+        <div>
+          <h4 class="text-[#6e7278] font-semibold text-[12px] tracking-[1.2px] uppercase mb-5">Producto</h4>
+          <ul class="space-y-4">
+            <li><a href="#" class="text-brand-gray text-[13.5px] hover:text-brand-dark transition-colors">Búsqueda semántica</a></li>
+            <li><a href="#" class="text-brand-gray text-[13.5px] hover:text-brand-dark transition-colors">Chat con sentencias</a></li>
+            <li><a href="#" class="text-brand-gray text-[13.5px] hover:text-brand-dark transition-colors">Alertas</a></li>
+            <li><a href="#" class="text-brand-gray text-[13.5px] hover:text-brand-dark transition-colors">Precios</a></li>
+          </ul>
         </div>
-        <p class="text-sm text-gray-600 max-w-[24rem]">La nueva era de la investigación legal en Ecuador. Potenciada por inteligencia artificial para equipos modernos.</p>
+        
+        <div>
+          <h4 class="text-[#6e7278] font-semibold text-[12px] tracking-[1.2px] uppercase mb-5">Compañía</h4>
+          <ul class="space-y-4">
+            <li><a href="#" class="text-brand-gray text-[13.5px] hover:text-brand-dark transition-colors">Nosotros</a></li>
+            <li><a href="#" class="text-brand-gray text-[13.5px] hover:text-brand-dark transition-colors">Blog</a></li>
+            <li><a href="#" class="text-brand-gray text-[13.5px] hover:text-brand-dark transition-colors">Carreras</a></li>
+            <li><a href="#" class="text-brand-gray text-[13.5px] hover:text-brand-dark transition-colors">Contacto</a></li>
+          </ul>
+        </div>
+        
+        <div>
+          <h4 class="text-[#6e7278] font-semibold text-[12px] tracking-[1.2px] uppercase mb-5">Legal</h4>
+          <ul class="space-y-4">
+            <li><a href="/terminos-de-servicio" class="text-brand-gray text-[13.5px] hover:text-brand-dark transition-colors">Términos</a></li>
+            <li><a href="/privacidad" class="text-brand-gray text-[13.5px] hover:text-brand-dark transition-colors">Privacidad</a></li>
+          </ul>
+        </div>
       </div>
-      <div>
-        <h4 class="text-gray-900 font-semibold mb-4 text-sm tracking-wide">Producto</h4>
-        <ul class="space-y-3">
-          <li><a class="text-sm text-gray-600 hover:text-gray-900 transition-colors" href="/">Jurisprudencia</a></li>
-          <li><a class="text-sm text-gray-600 hover:text-gray-900 transition-colors" href="/precios">Precios</a></li>
-          <li><a class="text-sm text-gray-600 hover:text-gray-900 transition-colors" href="#">Seguridad</a></li>
-          <li><a class="text-sm text-gray-600 hover:text-gray-900 transition-colors" href="#">Changelog</a></li>
-        </ul>
-      </div>
-      <div>
-        <h4 class="text-gray-900 font-semibold mb-4 text-sm tracking-wide">Empresa</h4>
-        <ul class="space-y-3">
-          <li><a class="text-sm text-gray-600 hover:text-gray-900 transition-colors" href="#">Sobre nosotros</a></li>
-          <li><a class="text-sm text-gray-600 hover:text-gray-900 transition-colors" href="/metodologia">Metodología</a></li>
-          <li><a class="text-sm text-gray-600 hover:text-gray-900 transition-colors" href="/contacto">Contacto</a></li>
-        </ul>
-      </div>
-      <div>
-        <h4 class="text-gray-900 font-semibold mb-4 text-sm tracking-wide">Legal</h4>
-        <ul class="space-y-3">
-          <li><a class="text-sm text-gray-600 hover:text-gray-900 transition-colors" href="/terminos-de-servicio">Términos de Servicio</a></li>
-          <li><a class="text-sm text-gray-600 hover:text-gray-900 transition-colors" href="/privacidad">Privacidad</a></li>
-          <li><a class="text-sm text-gray-600 hover:text-gray-900 transition-colors" href="/aviso-legal">Aviso Legal</a></li>
-        </ul>
-      </div>
+
     </div>
     
-    <div class="flex flex-col md:flex-row justify-between items-center border-t border-black/10 pt-8 gap-4">
-      <p class="text-sm text-gray-500">© {currentYear} Argemus. Todos los derechos reservados.</p>
-      <div class="flex gap-4">
-        <a class="text-gray-500 hover:text-gray-900 transition-colors" href="#">
-          <span class="material-symbols-outlined text-lg">language</span>
-        </a>
-      </div>
+    <div class="flex justify-between items-center pt-8 border-t border-[#e0e5eb]/50">
+      <p class="text-[13px] text-brand-light-gray">© {currentYear} Argemus. Todos los derechos reservados.</p>
     </div>
   </div>
 </footer>

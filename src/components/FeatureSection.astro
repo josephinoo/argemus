@@ -1,64 +1,164 @@
 ---
-const features = [
-  {
-    icon: 'search_insights',
-    title: 'Búsqueda Semántica',
-    description: 'Encuentra jurisprudencia por concepto o problema jurídico, no solo por palabras clave exactas.'
-  },
-  {
-    icon: 'bolt',
-    title: 'Resultados en Segundos',
-    description: 'Reduce horas de investigación a milisegundos gracias a nuestra infraestructura de IA de baja latencia.'
-  },
-  {
-    icon: 'gavel',
-    title: 'Precisión Legal',
-    description: 'Modelos entrenados específicamente con corpus legal ecuatoriano para garantizar relevancia y exactitud.'
-  },
-  {
-    icon: 'summarize',
-    title: 'Resúmenes Automáticos',
-    description: 'Extrae la ratio decidendi y los puntos clave de sentencias de cientos de páginas al instante.'
-  },
-  {
-    icon: 'notifications_active',
-    title: 'Alertas Jurisprudenciales',
-    description: 'Mantente al día con cambios de criterio en la Corte Nacional y Corte Constitucional.'
-  },
-  {
-    icon: 'verified_user',
-    title: 'Privacidad Enterprise',
-    description: 'Tus búsquedas e información están cifradas. Nunca entrenamos modelos con tus datos privados.'
-  }
-];
 ---
 
-<section class="w-full max-w-6xl mx-auto py-24 px-4 md:px-8">
-  <div class="text-center max-w-2xl mx-auto mb-16" data-animate="fade-up">
-    <h2 class="font-display text-3xl md:text-5xl font-bold tracking-tight text-gray-900 mb-4">
-      La ventaja competitiva para litigantes
-    </h2>
-    <p class="text-lg text-gray-500">
-      Todo lo que necesitas para construir argumentos ganadores con respaldo jurisprudencial en una fracción del tiempo.
-    </p>
-  </div>
+<section class="w-full relative z-10 py-14 md:py-24 px-4 overflow-hidden bg-gradient-to-b from-slate-50 to-orange-50">
+  <div class="max-w-6xl mx-auto flex flex-col lg:flex-row gap-10 lg:gap-12 xl:gap-16 items-center">
+    
+    <!-- Left Content -->
+    <div data-animate="fade-up" class="flex-1 min-w-0 w-full mx-auto lg:mx-0 text-center lg:text-left">
+      <h3 class="font-display text-blue-800 text-sm md:text-lg mb-6">
+        Conversa con la jurisprudencia
+      </h3>
+      
+      <h2 class="font-display text-3xl sm:text-4xl md:text-[68px] lg:text-[76px] text-gray-950 leading-[1.05] tracking-normal mb-8">
+        Pregunta.<br />
+        Profundiza.<br />
+        <span class="text-blue-800">Decide.</span>
+      </h2>
+      
+      <p class="font-body-lg text-zinc-700 text-base leading-7 mb-8">
+        Selecciona una o varias sentencias y conversa con ellas como si tuvieras un asistente legal senior trabajando para ti. Identifica jueces ponentes, compara criterios, extrae fundamentos — todo en lenguaje natural.
+      </p>
 
-  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" data-animate-group>
-    {features.map((feature) => (
-      <div 
-        data-animate="stagger"
-        class="bg-white/60 backdrop-blur-sm border border-gray-100 p-8 rounded-2xl shadow-sm hover:shadow-md transition-all duration-300 group"
-      >
-        <div class="w-12 h-12 bg-gray-50 rounded-xl border border-gray-100 flex items-center justify-center mb-6 group-hover:scale-110 group-hover:bg-primary/5 group-hover:border-primary/10 transition-transform duration-300">
-          <span class="material-symbols-outlined text-gray-700 group-hover:text-primary transition-colors" style="font-variation-settings: 'FILL' 0;">
-            {feature.icon}
-          </span>
+      <ul class="space-y-6 mb-10 text-left">
+        <li class="flex items-start gap-4">
+          <div class="mt-0.5 bg-blue-800/10 rounded-full p-1.5 flex-shrink-0">
+            <span class="material-symbols-outlined text-blue-800 text-[16px]" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+          </div>
+          <p class="text-base leading-6 text-gray-950">
+            <span class="font-semibold">Lenguaje natural</span>
+            <span class="text-zinc-700 font-normal"> — sin operadores booleanos, sin sintaxis especial.</span>
+          </p>
+        </li>
+        <li class="flex items-start gap-4">
+          <div class="mt-0.5 bg-blue-800/10 rounded-full p-1.5 flex-shrink-0">
+            <span class="material-symbols-outlined text-blue-800 text-[16px]" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+          </div>
+          <p class="text-base leading-6 text-gray-950">
+            <span class="font-semibold">Contexto persistente</span>
+            <span class="text-zinc-700 font-normal"> — la IA recuerda cada sentencia del hilo.</span>
+          </p>
+        </li>
+        <li class="flex items-start gap-4">
+          <div class="mt-0.5 bg-blue-800/10 rounded-full p-1.5 flex-shrink-0">
+            <span class="material-symbols-outlined text-blue-800 text-[16px]" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+          </div>
+          <p class="text-base leading-6 text-gray-950">
+            <span class="font-semibold">Exportación lista</span>
+            <span class="text-zinc-700 font-normal"> — copia citas formateadas a tu escrito en un click.</span>
+          </p>
+        </li>
+      </ul>
+
+      <a href="#" class="inline-flex items-center justify-center gap-2 w-44 h-11 bg-gray-950 text-white rounded-full font-medium text-sm hover:bg-gray-800 transition-colors shadow-[0px_1px_2px_0px_rgba(15,23,42,0.25)] mx-auto lg:mx-0">
+        Probar el chat
+        <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+      </a>
+    </div>
+
+    <!-- Right Mockup -->
+    <div data-animate="fade-left" class="w-full lg:w-[500px] xl:w-[560px] flex-shrink-0 relative">
+      <div class="bg-white border border-[#e0e5eb] rounded-[22px] shadow-[0_30px_70px_-24px_rgba(30,30,80,0.22)] overflow-hidden flex h-[520px] w-full">
+        
+        <!-- Sidebar -->
+        <div class="hidden sm:flex w-[200px] bg-brand-bg border-r border-[#ebeff2] flex-shrink-0 flex-col">
+          <div class="p-5 pb-2">
+            <span class="text-[#6e7278] text-[10.5px] font-medium uppercase tracking-[0.84px]">Chats recientes</span>
+          </div>
+          
+          <div class="flex-1 overflow-y-auto px-3 space-y-1 pb-4">
+            <!-- Active Chat -->
+            <div class="bg-white rounded-lg p-2.5 shadow-[0_1px_1.5px_rgba(15,23,42,0.03)] border border-gray-100 flex flex-col gap-1">
+              <span class="text-brand-dark font-medium text-[12px] leading-[1.2] line-clamp-2">Chat sobre selección (1 frag...)</span>
+            </div>
+            
+            <div class="rounded-lg p-2.5 hover:bg-gray-100/50 cursor-pointer flex flex-col gap-1">
+              <span class="text-brand-gray font-normal text-[12px] leading-[1.2] line-clamp-2">Chat sobre selección (2 frag...)</span>
+            </div>
+            
+            <div class="rounded-lg px-2.5 py-1.5 hover:bg-gray-100/50 cursor-pointer">
+              <span class="text-brand-gray font-normal text-[12px] truncate block">Chat: 979-23-EP_26</span>
+            </div>
+            
+            <div class="rounded-lg px-2.5 py-1.5 hover:bg-gray-100/50 cursor-pointer">
+              <span class="text-brand-gray font-normal text-[12px] truncate block">Chat: 1182-23-EP_26</span>
+            </div>
+            
+            <div class="rounded-lg px-2.5 py-1.5 hover:bg-gray-100/50 cursor-pointer">
+              <span class="text-brand-gray font-normal text-[12px] truncate block">Despido injustificado...</span>
+            </div>
+            
+            <div class="rounded-lg px-2.5 py-1.5 hover:bg-gray-100/50 cursor-pointer">
+              <span class="text-brand-gray font-normal text-[12px] truncate block">Casación civil 2023</span>
+            </div>
+          </div>
         </div>
-        <h3 class="text-xl font-bold text-gray-900 mb-3">{feature.title}</h3>
-        <p class="text-gray-500 leading-relaxed text-sm">
-          {feature.description}
-        </p>
+        
+        <!-- Main Chat Area -->
+        <div class="flex-1 bg-white flex flex-col relative min-w-0">
+          <!-- Chat Header -->
+          <div class="h-[49px] border-b border-[#ebeff2] flex items-center px-4 gap-2 flex-shrink-0">
+            <span class="material-symbols-outlined text-brand-gray text-[16px]">chat_bubble_outline</span>
+            <span class="text-brand-gray text-[13px] truncate">Chat sobre selección</span>
+            <span class="bg-brand-primary/10 text-brand-primary text-[11.5px] font-medium px-2.5 py-0.5 rounded-md ml-auto whitespace-nowrap">1 fragmento</span>
+          </div>
+          
+          <!-- Chat Messages -->
+          <div class="flex-1 bg-brand-bg overflow-y-auto p-5 pb-24 space-y-6">
+            
+            <!-- User Msg 1 -->
+            <div class="flex flex-col items-end gap-1">
+              <div class="bg-brand-dark text-white text-[13px] rounded-tl-[14px] rounded-tr-[14px] rounded-bl-[14px] rounded-br-[4px] px-4 py-2.5 max-w-[85%] text-left">
+                ¿De qué se trata la sentencia?
+              </div>
+            </div>
+            
+            <!-- Bot Msg 1 -->
+            <div class="flex flex-col items-start gap-1 relative pl-10">
+              <div class="absolute left-0 top-0 size-7 bg-brand-primary/10 rounded-lg flex items-center justify-center">
+                <span class="material-symbols-outlined text-brand-primary text-[14px]">psychology</span>
+              </div>
+              <div class="text-brand-gray text-[13px] leading-[20px]">
+                La sentencia <span class="font-semibold text-brand-dark">979-23-EP</span> se refiere a una acción extraordinaria de protección presentada por Asesores y Consejeros ACONSEC S.A. contra la Corte Nacional de Justicia. La Corte Constitucional concluyó que no hubo vulneración de derechos y desestimó la acción.
+              </div>
+            </div>
+            
+            <!-- User Msg 2 -->
+            <div class="flex flex-col items-end gap-1">
+              <div class="bg-brand-dark text-white text-[13px] rounded-tl-[14px] rounded-tr-[14px] rounded-bl-[14px] rounded-br-[4px] px-4 py-2.5 max-w-[85%] text-left">
+                Dime los jueces involucrados
+              </div>
+            </div>
+            
+            <!-- Bot Msg 2 -->
+            <div class="flex flex-col items-start gap-1 relative pl-10">
+              <div class="absolute left-0 top-0 size-7 bg-brand-primary/10 rounded-lg flex items-center justify-center">
+                <span class="material-symbols-outlined text-brand-primary text-[14px]">psychology</span>
+              </div>
+              <div class="text-brand-gray text-[13px] leading-[20px]">
+                Los jueces involucrados son:<br/>
+                <span class="font-medium text-brand-dark">• José Luis Terán Suárez</span> (juez ponente)<br/>
+                <span class="font-medium text-brand-dark">• Claudia Salgado Levy</span> (voto salvado)
+              </div>
+            </div>
+          </div>
+          
+          <!-- Chat Input -->
+          <div class="absolute bottom-4 left-4 right-4">
+            <div class="bg-white border border-[#e0e5eb] rounded-full shadow-[0_1px_1.5px_rgba(15,23,42,0.03)] h-[58px] flex items-center px-4 relative">
+              <button class="text-brand-gray hover:text-brand-dark transition-colors flex-shrink-0">
+                <span class="material-symbols-outlined text-[20px]">add_circle</span>
+              </button>
+              <input type="text" placeholder="Pregunta sobre estas sentencias..." class="flex-1 bg-transparent border-none outline-none px-4 text-[13px] text-brand-dark placeholder:text-gray-400" />
+              <button class="bg-brand-primary text-white size-8 rounded-full flex items-center justify-center hover:bg-blue-800 transition-colors flex-shrink-0 shadow-sm">
+                <span class="material-symbols-outlined text-[16px] -rotate-90">arrow_forward</span>
+              </button>
+            </div>
+          </div>
+          
+        </div>
       </div>
-    ))}
+    </div>
+
   </div>
 </section>
