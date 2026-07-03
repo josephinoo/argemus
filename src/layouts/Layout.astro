@@ -140,7 +140,7 @@ const structuredData = {
 
 		<!-- Hide animated elements before JS runs to prevent flash -->
 		<style>
-			[data-animate] {
+			[data-animate], [data-animate="stagger"], #main-nav {
 				opacity: 0;
 			}
 		</style>
@@ -175,6 +175,22 @@ const structuredData = {
 
 				gsap.registerPlugin(ScrollTrigger);
 
+				// ── Navbar: slide down on page load ────────────────────────────
+				const nav = document.getElementById("main-nav");
+				if (nav) {
+					gsap.fromTo(
+						nav,
+						{ opacity: 0, y: -20 },
+						{
+							opacity: 1,
+							y: 0,
+							duration: 1,
+							ease: "power3.out",
+							clearProps: "all",
+						}
+					);
+				}
+
 				// ── Hero: staggered entrance on page load ──────────────────
 				const heroEls = document.querySelectorAll(
 					'[data-animate="hero"]'
@@ -197,34 +213,36 @@ const structuredData = {
 					);
 				}
 
-				// ── Scroll-triggered fade-up (individual elements) ─────────
-				document
-					.querySelectorAll('[data-animate="fade-up"]')
-					.forEach(function (el) {
-						gsap.fromTo(
-							el,
-							{
-								opacity: 0,
-								y: 40,
-								filter: "blur(8px)",
-								scale: 0.98,
+				// ── Scroll-triggered fade-up/left/right (individual elements) ─────────
+				const animateEls = document.querySelectorAll('[data-animate="fade-up"], [data-animate="fade-left"], [data-animate="fade-right"]');
+				animateEls.forEach(function (el) {
+					const animationType = el.getAttribute('data-animate');
+					let startProps = { opacity: 0, filter: "blur(8px)", scale: 0.98 };
+					
+					if (animationType === 'fade-up') startProps.y = 40;
+					if (animationType === 'fade-left') startProps.x = 40; // Animates from right to left
+					if (animationType === 'fade-right') startProps.x = -40; // Animates from left to right
+
+					gsap.fromTo(
+						el,
+						startProps,
+						{
+							opacity: 1,
+							x: 0,
+							y: 0,
+							filter: "blur(0px)",
+							scale: 1,
+							duration: 1.2,
+							ease: "power3.out",
+							clearProps: "transform,filter,scale",
+							scrollTrigger: {
+								trigger: el,
+								start: "top 85%",
+								once: true,
 							},
-							{
-								opacity: 1,
-								y: 0,
-								filter: "blur(0px)",
-								scale: 1,
-								duration: 1.2,
-								ease: "power3.out",
-								clearProps: "transform,filter,scale",
-								scrollTrigger: {
-									trigger: el,
-									start: "top 85%",
-									once: true,
-								},
-							}
-						);
-					});
+						}
+					);
+				});
 
 				// ── Scroll-triggered stagger groups ────────────────────────
 				document
