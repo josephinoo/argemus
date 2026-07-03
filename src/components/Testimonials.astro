@@ -1,4 +1,8 @@
 ---
+import { Image } from 'astro:assets';
+import bg3 from '../assets/bg-3.png';
+import bg4 from '../assets/bg-4.png';
+import bg5 from '../assets/bg-5.png';
 ---
 
 <section class="w-full relative z-10 py-14 md:py-32 px-4 bg-orange-50">
@@ -21,7 +25,7 @@
       <!-- Testimonial 1 (Light) -->
       <div data-animate="stagger" class="bg-white rounded-3xl outline outline-1 outline-offset-[-1px] outline-gray-200 p-8 flex flex-col justify-between h-full">
         <div class="w-full aspect-[5/4] rounded-2xl overflow-hidden mb-8">
-          <img class="w-full h-full object-cover" src="/assets/bg-3.png" alt="Dr. Carlos Mendoza" />
+          <Image src={bg3} class="w-full h-full object-cover" alt="Dr. Carlos Mendoza" />
         </div>
         <div class="mb-8 flex-1">
           <p class="text-gray-950 text-lg font-display leading-7">
@@ -37,7 +41,7 @@
       <!-- Testimonial 2 (Dark) -->
       <div data-animate="stagger" class="bg-gray-950 rounded-3xl outline outline-1 outline-offset-[-1px] outline-gray-900 p-8 flex flex-col justify-between h-full shadow-xl">
         <div class="w-full aspect-[5/4] rounded-2xl overflow-hidden mb-8">
-          <img class="w-full h-full object-cover" src="/assets/bg-4.png" alt="Dra. María Fernanda López" />
+          <Image src={bg4} class="w-full h-full object-cover" alt="Dra. María Fernanda López" />
         </div>
         <div class="mb-8 flex-1">
           <p class="text-white text-lg font-display leading-7">
@@ -53,7 +57,7 @@
       <!-- Testimonial 3 (Light) -->
       <div data-animate="stagger" class="bg-white rounded-3xl outline outline-1 outline-offset-[-1px] outline-gray-200 p-8 flex flex-col justify-between h-full">
         <div class="w-full aspect-[5/4] rounded-2xl overflow-hidden mb-8">
-          <img class="w-full h-full object-cover" src="/assets/bg-5.png" alt="Dr. Roberto Silva" />
+          <Image src={bg5} class="w-full h-full object-cover" alt="Dr. Roberto Silva" />
         </div>
         <div class="mb-8 flex-1">
           <p class="text-gray-950 text-lg font-display leading-7">

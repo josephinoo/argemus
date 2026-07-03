@@ -1,6 +1,9 @@
 ---
+// Trigger HMR
+import { Image } from 'astro:assets';
+import bg1 from '../assets/bg-1.png';
 ---
 
 <div class="absolute top-0 left-0 w-full min-h-[1200px] h-[120vh] z-0 pointer-events-none overflow-hidden opacity-60">
-  <img alt="" class="absolute h-full w-full object-cover object-top" src="/assets/bg-1.png" />
+  <Image src={bg1} alt="" class="absolute h-full w-full object-cover object-top" />
 </div>
